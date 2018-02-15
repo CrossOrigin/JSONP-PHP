@@ -1,4 +1,3 @@
-<?php
 //  CrossOrigin
 //  Copyright (C) 2017-2018  Zaoqi
 
@@ -17,6 +16,4 @@
 
 $filename=get('$f');
 
-$r=file_get_contents(json_decode($_GET["f"])
-send2js(file_get_contents($_GET["f"]), $_GET["cb"]);
-?>
+send(file_get_contents($filename));

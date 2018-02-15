@@ -1,4 +1,3 @@
-<?php
 //  CrossOrigin
 //  Copyright (C) 2017-2018  Zaoqi
 
@@ -14,8 +13,9 @@
 
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-$parm=array_replace($_GET, $_POST);
 function send($data) {
-	global $parm;
-	echo $parm['l'] . json_encode($data) . $parm['r'];}
-function get($x) {return $parm[$x];}
+	echo get('l') . json_encode($data) . get('r');}
+
+$parm=array_replace($_GET, $_POST);
+function get($name) {
+	return json_decode($parm[$name]);}
